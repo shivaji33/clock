@@ -1,0 +1,125 @@
+:root {
+  --rotation: 0deg; }
+
+* {
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif; }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f2f2f2; }
+
+.clock-wrapper {
+  padding: 20px;
+  margin: 20px;
+  border-radius: 50%;
+  background-color: #eee4d8;
+  border: 0px solid #ccc; }
+  .clock-wrapper .clock {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    border-radius: 50%; }
+    .clock-wrapper .clock::after {
+      content: "";
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 20;
+      background: #000; }
+    .clock-wrapper .clock::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 22;
+      background: #f00;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%; }
+    .clock-wrapper .clock .hand {
+      position: absolute;
+      left: 50%;
+      bottom: 50%;
+      transform: translatex(-50%) rotate(calc(var(--rotation) * 1deg));
+      border-radius: 5px 5px 0 0;
+      transform-origin: bottom; }
+      .clock-wrapper .clock .hand.second {
+        width: 1px;
+        height: 42%;
+        background: #f00;
+        z-index: 13; }
+      .clock-wrapper .clock .hand.minute {
+        width: 3px;
+        height: 35%;
+        background: #000;
+        z-index: 12; }
+      .clock-wrapper .clock .hand.hour {
+        width: 7px;
+        height: 25%;
+        background: #000;
+        z-index: 11; }
+    .clock-wrapper .clock .number {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%) rotate(var(--rotation));
+      height: 50%;
+      transform-origin: bottom;
+      z-index: 10;
+      font-size: 20px;
+      font-weight: 600; }
+      .clock-wrapper .clock .number div {
+        transform: rotate(calc(var(--rotation) * -1)); }
+      .clock-wrapper .clock .number.number1 {
+        --rotation: 30deg; }
+      .clock-wrapper .clock .number.number2 {
+        --rotation: 60deg; }
+      .clock-wrapper .clock .number.number3 {
+        --rotation: 90deg; }
+      .clock-wrapper .clock .number.number4 {
+        --rotation: 120deg; }
+      .clock-wrapper .clock .number.number5 {
+        --rotation: 150deg; }
+      .clock-wrapper .clock .number.number6 {
+        --rotation: 180deg; }
+      .clock-wrapper .clock .number.number7 {
+        --rotation: 210deg; }
+      .clock-wrapper .clock .number.number8 {
+        --rotation: 240deg; }
+      .clock-wrapper .clock .number.number9 {
+        --rotation: 270deg; }
+      .clock-wrapper .clock .number.number10 {
+        --rotation: 300deg; }
+      .clock-wrapper .clock .number.number11 {
+        --rotation: 330deg; }
+      .clock-wrapper .clock .number.number12 {
+        --rotation: 360deg; }
+    .clock-wrapper .clock .time-display {
+      position: absolute;
+      top: 60%;
+      left: 55%;
+      transform: translate(-60%, -55%); }
+      .clock-wrapper .clock .time-display .digit-box {
+        padding: .5rem;
+        background-color: #fff;
+        border-radius: 5px;
+        margin: 5px;
+        width: 40px;
+        color: #f00; }
+    .clock-wrapper .clock .signature {
+      font-size: 10px;
+      position: absolute;
+      bottom: 30%;
+      left: 50%;
+      transform: translate(-50%, 30%);
+      color: #f00; }
